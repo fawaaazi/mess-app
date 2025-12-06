@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors")
 app.use(express.json());
 
-const allowedOrigin = ["http://127.0.0.1:5501", "http://127.0.0.1:5500"]
+const allowedOrigin = ["http://127.0.0.1:5501", "http://127.0.0.1:5500", "https://fawaaazi.github.io"]
 app.use(cors({
     origin:(origin,callback)=>{
         if(!origin || allowedOrigin.includes(origin)){
