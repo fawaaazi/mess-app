@@ -12,16 +12,15 @@ form.addEventListener("submit",(e)=>{
 function RenderAttendenceTable(data){
     let count = 1;
     data.forEach(Element =>{
-        RenderTableTr(Element);
+        RenderTableTr(Element,count++);
     })
 }
 
-function RenderTableTr(Element){
-    let count = 1
+function RenderTableTr(Element, count){
     const inp = $(`<input type="number" name="${Element.name}" min="0" max="31" class="input-days" >`)
     const tdInp = $(`<td class="day-field"></td>`)
     const tr = $(` <tr>
-                <td>${count++}</td>
+                <td>${count}</td>
                 <td><h3>${Element.name}</h3></td>
                 </tr>`
             )
