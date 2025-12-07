@@ -6,7 +6,7 @@ const form = document.querySelector("form")
 let data;
 const table = $("table")
 $.ajax({
-    url:"http://localhost:5500/",
+    url:"https://mess-app-1qlz.onrender.com",
     method: "GET",
     success:(res)=>{
         data = res
@@ -66,7 +66,7 @@ $("#submit-btn").on("click",(e)=>{
 
         console.log(daysPresent)
         $.ajax({
-           url:"http://localhost:5500/present",
+           url:"https://mess-app-1qlz.onrender.com/present",
            method: "POST",
            data: JSON.stringify(daysPresent),
            contentType: "application/json",
@@ -98,7 +98,7 @@ $("#submit-btn").on("click",(e)=>{
                             alavance : Number.parseInt($("#alavance").val())
                         }
                         $.ajax({
-                            url:"http://localhost:5500/expense",
+                            url:"https://mess-app-1qlz.onrender.com/expense",
                             method: "POST",
                             data: JSON.stringify(expense),
                             contentType: "application/json",
