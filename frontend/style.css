@@ -15,15 +15,16 @@ nav h1{
     padding-top: 13px;
 }
 
-form{
+/* form{
     width: fit-content;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-}
+} */
 
 table{
     border-collapse: collapse;
+    margin: auto;
 
 }
 table thead th{
@@ -52,10 +53,10 @@ table tr .day-field{
 .day-field input:focus {
   outline: none;
   box-shadow: none;
-  border-color: inherit; /* optional: prevents blue border on focus */
+  border-color: inherit; 
 }
 
-/* Remove number arrows in Chrome, Edge, Safari, Opera */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -121,4 +122,64 @@ h2{
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+/* Update the form style to be flexible */
+form {
+    width: 95%; /* changed from fit-content */
+    max-width: 800px; /* limits width on big screens */
+    /* margin-top: 50px;
+    margin-bottom: 50px; */
+    margin: 50px auto ;
+}
+
+/* ... keep your existing table, input, nav styles ... */
+
+/* ADD THIS: A wrapper to allow tables to scroll sideways on phones */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Adds scrollbar if table is too big */
+    margin-bottom: 20px;
+    /* border: 1px solid #ddd; Optional: cleaner look */
+}
+
+/* Update Expense Container to be more flexible */
+#expense-container {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px; /* Reduced from 150px for better mobile view */
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100%; /* Ensure it fits */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+    nav h1 {
+        font-size: 1.5rem; /* Smaller header */
+    }
+
+    /* Make table text smaller so more fits */
+    table thead th {
+        font-size: 14px; 
+    }
+    
+    table tbody td h3 {
+        font-size: 14px;
+    }
+
+    /* Make buttons easier to tap */
+    input[type="submit"] {
+        width: 80%; /* Wider button for thumbs */
+    }
+
+    #expense-container label {
+        font-size: 18px;
+    }
+    
+    /* Reduce padding in table cells */
+    table tbody td, th {
+        padding: 8px 4px;
+    }
 }

@@ -89,7 +89,8 @@ function getDaysPresent(){
 
 function RenderExpenseForm(res){
     $("form").html("")
-    $("form").append(`<h2> Total Number of Points ${res.totalDays}</h2>
+    $("form").append(`
+        <h2> Total Number of Points ${res.totalDays}</h2>
         <div id="expense-container">
             <div id="expense-div">
                 <label for="messExpense">Total Mess Expense</label><br>
@@ -143,19 +144,21 @@ function getExpense(){
 function renderMessBillTable(res){
 
      $(".main").html(`
-        <table border="1" id="mess-bill-table">
-            <thead>
-                <th>SI No</th>
-                <th>Name</th>
-                <th>No of Days Present</th>
-                <th>Per Day Expense</th>
-                <th>Alavance</th>
-                <th>Mess Bill</th>
-                <th>Total</th>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>`
+        <div class="table-wrapper">
+            <table border="1" id="mess-bill-table">
+                <thead>
+                    <th>SI No</th>
+                    <th>Name</th>
+                    <th>No of Days Present</th>
+                    <th>Per Day Expense</th>
+                    <th>Alavance</th>
+                    <th>Mess Bill</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>`
     )
     renderMessBillTableTr(res)
 }
